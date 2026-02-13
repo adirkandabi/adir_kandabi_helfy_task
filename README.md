@@ -32,3 +32,7 @@
 - State Management: Used local state and custom hooks for clean separation of concerns.
 - Inline Editing: Decided on inline editing within the TaskItem for a faster, more modern user experience compared to modals.
 - Search Logic: Implemented client-side for instant feedback as the user types.
+
+## API Documentation
+
+`https://documenter.getpostman.com/view/37942791/2sBXcBnN6N`
