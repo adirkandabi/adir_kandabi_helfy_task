@@ -59,6 +59,13 @@ const TaskList = ({ tasks, onToggle, onDelete, onUpdate }) => {
   };
 
   useEffect(() => {
+    resetTimer();
+    return () => {
+      if (timeoutRef.current) clearInterval(timeoutRef.current);
+    };
+  }, [tasks.length, isAnyTaskEditing]);
+
+  useEffect(() => {
     if (tasks.length <= 1) {
       setCurrentIndex(0);
       setIsTransitioning(false);
@@ -66,11 +73,7 @@ const TaskList = ({ tasks, onToggle, onDelete, onUpdate }) => {
       setCurrentIndex(1);
       setIsTransitioning(true);
     }
-    resetTimer();
-    return () => {
-      if (timeoutRef.current) clearInterval(timeoutRef.current);
-    };
-  }, [tasks.length, isAnyTaskEditing]);
+  }, [tasks.length]);
 
   if (tasks.length === 0) {
     return <div className="no-tasks">There is no tasks to show here</div>;
@@ -78,9 +81,11 @@ const TaskList = ({ tasks, onToggle, onDelete, onUpdate }) => {
 
   return (
     <div className="carousel-container">
-      <button className="carousel-btn prev" onClick={handlePrev}>
-        ❮
-      </button>
+      {!isAnyTaskEditing && (
+        <button className="carousel-btn prev" onClick={handlePrev}>
+          ❮
+        </button>
+      )}
 
       <div
         className="carousel-viewport"
@@ -109,10 +114,11 @@ const TaskList = ({ tasks, onToggle, onDelete, onUpdate }) => {
           ))}
         </div>
       </div>
-
-      <button className="carousel-btn next" onClick={handleNext}>
-        ❯
-      </button>
+      {!isAnyTaskEditing && (
+        <button className="carousel-btn next" onClick={handleNext}>
+          ❯
+        </button>
+      )}
     </div>
   );
 };

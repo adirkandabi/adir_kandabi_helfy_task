@@ -9,7 +9,6 @@ const TaskItem = ({
   onEditStart,
   onEditEnd,
 }) => {
-  // State לניהול מצב עריכה
   const [isEditing, setIsEditing] = useState(false);
   const [editTitle, setEditTitle] = useState(task.title);
   const [editDescription, setEditDescription] = useState(task.description);
