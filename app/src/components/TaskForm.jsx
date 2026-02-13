@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "../styles/TaskForm.css";
+import "../styles/App.css";
 
 const TaskForm = ({ onAdd }) => {
   const [title, setTitle] = useState("");
+  const [error, setError] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("medium");
 
@@ -10,7 +12,7 @@ const TaskForm = ({ onAdd }) => {
     e.preventDefault();
 
     if (!title.trim()) {
-      alert("Please enter a task title");
+      setError("Please enter a task title");
       return;
     }
 
@@ -19,7 +21,7 @@ const TaskForm = ({ onAdd }) => {
       description,
       priority,
     });
-
+    setError("");
     setTitle("");
     setDescription("");
     setPriority("medium");
@@ -56,6 +58,7 @@ const TaskForm = ({ onAdd }) => {
           Add Task
         </button>
       </div>
+      {error && <div className="error-banner">{error}</div>}
     </form>
   );
 };

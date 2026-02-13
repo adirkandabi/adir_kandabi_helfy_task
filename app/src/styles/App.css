@@ -37,7 +37,6 @@ header h1 {
   padding: 1rem;
   border-radius: 8px;
   border-left: 5px solid var(--error-color);
-  margin-bottom: 2rem;
   text-align: center;
   font-weight: 500;
 }

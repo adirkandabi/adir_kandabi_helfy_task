@@ -39,7 +39,7 @@ function App() {
           <TaskForm onAdd={addTask} />
         </div>
       </header>
-
+      {error && <div className="error-banner">{error}</div>}
       <main>
         <TaskFilter currentFilter={filter} setFilter={setFilter} />
         <div className="search-section">
@@ -51,7 +51,6 @@ function App() {
             className="search-input"
           />
         </div>
-        {error && <div className="error-banner">{error}</div>}
 
         {loading ? (
           <div className="loader-container">
