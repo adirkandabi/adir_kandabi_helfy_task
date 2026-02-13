@@ -1,0 +1,43 @@
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.carousel-viewport {
+  width: 100%;
+  max-width: 600px; /* גודל המשימה שרואים */
+  overflow: hidden; /* מסתיר את שאר המשימות */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* האנימציה החלקה */
+  will-change: transform;
+}
+
+.carousel-slide {
+  min-width: 100%; /* כל משימה תופסת 100% מרוחב ה-viewport */
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.carousel-btn {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.carousel-btn:hover {
+  background: #555;
+}

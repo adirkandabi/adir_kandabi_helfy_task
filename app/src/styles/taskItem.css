@@ -1,0 +1,162 @@
+.task-item {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+  transition: opacity 0.3s ease;
+}
+
+.task-item.completed {
+  opacity: 0.6;
+}
+
+.task-item.completed h3 {
+  text-decoration: line-through;
+}
+.badges-wrapper {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.completed-badge {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.completed-badge {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.priority-badge {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: white;
+}
+
+.priority-high {
+  background-color: #ff4d4d;
+}
+.priority-medium {
+  background-color: #ffa500;
+}
+.priority-low {
+  background-color: #4caf50;
+}
+
+.task-description {
+  color: #666;
+  font-size: 0.9rem;
+  min-height: 40px;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}
+
+.btn-toggle,
+.btn-delete {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 1;
+  font-weight: 500;
+}
+
+.btn-toggle {
+  background: #57c15d;
+  color: white;
+}
+.btn-toggle.completed {
+  background-color: #e0e0e0;
+  color: #333;
+}
+.btn-toggle:not(.completed):hover {
+  background: #8fe994;
+}
+/* .btn-toggle.completed:hover {
+  background: #333;
+  color: white;
+} */
+
+.btn-delete {
+  background: #ffebee;
+  color: #c62828;
+}
+.btn-delete:hover {
+  background: #ffcdd2;
+}
+.edit-title-input {
+  font-size: 1.17em;
+  font-weight: bold;
+  width: 100%;
+  border: 1px dashed #4a90e2;
+  padding: 4px;
+  margin-bottom: 5px;
+}
+
+.edit-desc-input {
+  width: 100%;
+  min-height: 60px;
+  font-family: inherit;
+  border: 1px dashed #4a90e2;
+  padding: 4px;
+  resize: vertical;
+}
+
+.btn-save {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 1;
+}
+.btn-cancel {
+  background-color: #9e9e9e;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 1;
+}
+.btn-edit {
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 1;
+}
