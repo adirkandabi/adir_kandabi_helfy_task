@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/TaskForm.css";
+import "../styles/taskForm.css";
 import "../styles/App.css";
 
 const TaskForm = ({ onAdd }) => {
