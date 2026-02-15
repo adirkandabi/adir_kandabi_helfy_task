@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/TaskFilter.css";
+import "../styles/taskFilter.css";
 
 const TaskFilter = ({ currentFilter, setFilter }) => {
   const filters = ["all", "pending", "completed"];
